@@ -1,0 +1,181 @@
+/* From rupumped.github.io/main.css */
+:root {
+    --img-margin: 0.5em;
+    --text-color: black;
+    --seperator-color: gainsboro;
+    --max-w: 90%;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 25cm;
+    max-width: var(--max-w);
+    font-family: 'Questrial', sans-serif;
+    font-size: 21px;
+    line-height: 1.4em;
+    letter-spacing: 0.06em;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+header {
+    font-family: 'Open Sans', sans-serif;
+}
+header #name {
+    text-align: center;
+    font-size: 2ch;
+    font-weight: 700;
+    letter-spacing: 0.1ch;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+/* From rupumped.github.io/business-card/business-card.css */
+:root {
+    --bg-color: black;
+    --text-color: white;
+    --translucent-black: rgba(0,0,0,0.8);
+    --blue-triangle-height: 2cm;
+    --black-triangle-height: 3.5cm;
+    --black-triangle-width: 80%;
+    --crop-dist: 0px;
+}
+
+body {
+    background: var(--bg-color);
+}
+
+#bg-container {
+    position: fixed;
+    bottom: -15px;
+    left: 0;
+}
+#blue-triangle{
+    position: relative;
+    top: calc(var(--blue-triangle-height) + var(--black-triangle-height) + var(--crop-dist));
+    left: 0;
+    background-image: linear-gradient(to top right, transparent 50%, var(--bg-color) 50%);
+    height: var(--blue-triangle-height);
+    width: 100%;
+    z-index: 3;
+}
+#black-triangle{
+    position: relative;
+    top: calc(var(--black-triangle-height) + var(--crop-dist));
+    float: right;
+    background-image: linear-gradient(to top right, transparent 50%, #C63D43 50%);
+    height: var(--black-triangle-height);
+    width: var(--black-triangle-width);
+    z-index: 2;
+}
+#bg-img {
+    width: 100%;
+    z-index: 1;
+    clip-path: inset(var(--crop-dist) 0px 0px 0px);
+}
+
+header {
+    position: relative;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    text-align: center;
+}
+header img {
+    width: 70%;
+}
+header #name {
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 35px;
+    line-height: 1.1em;
+    margin-top: 0.1em;
+    margin-bottom: 0.4em;
+}
+header #job {
+    text-align: center;
+    font-size: 25px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 1cm;
+}
+.contact {
+    display: flex;
+    align-items: center;
+    background: var(--translucent-black);
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    margin: 0.25cm 0;
+}
+.contact:hover {
+    color: white;
+    text-decoration: underline;
+}
+.contact img {
+    width: 0.9cm;
+    border-radius: 50%;
+    margin: 0.4cm;
+}
+
+textarea {
+    font-size: 17px;
+    background: var(--translucent-black);
+    color: white;
+    resize: none;
+}
+textarea:focus {
+    outline: none;
+}
+
+@media (min-aspect-ratio: 375/718) {
+    :root {
+        --crop-dist: 2cm;
+    }
+    main {
+        margin: 0.2cm 0;
+    }
+    .contact {
+        margin: 0.2cm 0;
+    }
+}
+@media (min-aspect-ratio: 375/664) {
+    :root {
+        --crop-dist: 3cm;
+    }
+    main {
+        margin: 0.1cm 0;
+    }
+    .contact {
+        margin: 0.1cm 0;
+    }
+}
+
+@media (min-aspect-ratio: 568/883) {
+    :root {
+       --max-width: 424px;
+    }
+    body {
+        width: var(--max-width);
+        padding: 1em;
+        border: 2px solid black;
+    }
+    #bg-container {
+        display: none;
+    }
+}
+
+/* New */
+.contact {
+    line-height: 1.3em;
+}
